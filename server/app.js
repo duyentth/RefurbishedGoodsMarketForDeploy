@@ -1,5 +1,5 @@
 import express from "express";
-//import cors from "cors";
+import cors from "cors";
 import authRouter from "./routes/auth.route.js";
 import notificationRouter from "./routes/notification.route.js";
 import productRouter from "./routes/product.route.js";
@@ -10,7 +10,7 @@ import * as path from "path";
 const app = express();
 
 app.use(express.json());
-//app.use(cors());
+app.use(cors());
 
 app.use("/api/auth", authRouter);
 app.use("/api/notifications", notificationRouter);
