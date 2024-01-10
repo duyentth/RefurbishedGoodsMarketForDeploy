@@ -21,6 +21,7 @@ app.use("/api/payments", paymentRouter);
 //error handler
 app.use((error, req, res, next) => {
     if (error) {
+        console.log("error is: ", error);
         res.status(500).send("Server Error: ", error);
     } else {
         next();
@@ -28,6 +29,7 @@ app.use((error, req, res, next) => {
 });
 
 app.use((req, res) => {
+    console.log("url is: ", req.url);
     res.status(501).send("API is not supported.");
 });
 
